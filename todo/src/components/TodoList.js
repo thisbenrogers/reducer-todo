@@ -2,8 +2,6 @@ import React, { useContext } from 'react';
 
 import { TodoContext } from '../contexts/TodoContext';
 
-import Todo from './Todo';
-
 const TodoList = () => {
     const { state, dispatch } = useContext(TodoContext);
     
@@ -12,7 +10,11 @@ const TodoList = () => {
     return (
         <div>
             {arr.map(todo => {
-                return <Todo key={todo.id} props={todo} />
+                return (
+                    <div key={todo.id} onClick={() => dispatch({ type: 'TOGGLE' })}>
+                        <p className={todo.completed ? 'completed' : ''}>{todo.item}</p>
+                    </div>
+                )
             })}
         </div>
     )
