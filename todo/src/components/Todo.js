@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Todo = () => {
+const Todo = props => {
+    console.log("props in todo: ", props);
+
+    const { completed, id, item } = props.props;
     return (
-        <>
-            <p>todo</p>
-        </>
+        <p className={completed ? 'completed' : ''}>{item}</p>
     )
 }
 
