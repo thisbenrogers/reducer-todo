@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import AddTodo from './AddTodoForm';
+
+import { ListContext } from '../contexts/ListContext';
 
 const TodoList = () => {
-    return <h2>Todo List</h2>
+    const { listState, dispatch } = useContext(ListContext);
+
+    return (
+        <>
+            {listState.map(todo => {
+                return <p>{todo.item}</p>
+            })}
+            <AddTodo />
+        </>
+    )
 }
 
 export default TodoList;

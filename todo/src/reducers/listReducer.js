@@ -27,3 +27,7 @@ export const initialState = [
         id: uuid.v1()
     }
 ]
+
+export const listReducer = (state, action) => {
+
+}

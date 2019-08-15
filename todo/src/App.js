@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 
 import TodoList from './components/TodoList';
-import AddTodo from './components/AddTodoForm';
+
+import { ListContext } from './contexts/ListContext';
+import { initialState, listReducer } from './reducers/listReducer';
 
 import './App.css';
 
 function App() {
+  const [listState, dispatch] = useReducer(listReducer, initialState);
+
   return (
-    <div className="App">
-      <h1>Todo App</h1>
-      <TodoList />
-      <AddTodo />
-    </div>
+    <ListContext.Provider value={{ listState, dispatch }}>
+      <div className="App">
+        <h1>Todo App</h1>
+        <TodoList />
+      </div>
+    </ListContext.Provider>
   );
 }
 
