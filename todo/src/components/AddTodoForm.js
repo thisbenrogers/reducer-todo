@@ -8,7 +8,6 @@ const AddTodo = () => {
 
     const { listState, dispatch } = useContext(ListContext);
 
-    // TODO => pass submitFunction into useForm() below: useForm(submiFunction)
     const { fields, submit, handleChanges } = useForm(() => dispatch({ type: "ADD_TODO", payload: fields }));
 
     return(

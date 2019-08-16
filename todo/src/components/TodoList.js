@@ -13,7 +13,8 @@ const TodoList = () => {
             {listState.map((todo, index) => {
                 return <Todo key={index} props={ todo} dispatch={dispatch} />
             })}
-            <AddTodo dispatch={dispatch} />
+            <AddTodo />
+            <button onClick={() => dispatch({ type: "CLEAR_COMPLETED" })}>clear completed</button>
         </>
     )
 }

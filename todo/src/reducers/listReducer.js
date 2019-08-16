@@ -9,9 +9,11 @@ export const listReducer = (state, action) => {
             ];
         case "TOGGLE_COMPLETED":
             state.forEach(todo => {
-                todo.id === action.payload && (todo.completed = !todo.completed);
+                todo.id === action.payload && (todo.completed = !todo.completed)
             })
             return [...state];
+        case "CLEAR_COMPLETED":
+            return state.filter(todo => !todo.completed);
         default:
             return state;
     }

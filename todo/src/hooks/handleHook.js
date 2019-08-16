@@ -6,6 +6,7 @@ export const useForm = cb => {
     const submit = e => {
         e.preventDefault();
         cb(fields);
+        e.target.reset();
     }
 
     const handleChanges = e => {
