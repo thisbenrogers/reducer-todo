@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 
+import Todo from './Todo';
 import AddTodo from './AddTodoForm';
 
 import { ListContext } from '../contexts/ListContext';
@@ -9,10 +10,10 @@ const TodoList = () => {
 
     return (
         <>
-            {listState.map(todo => {
-                return <p>{todo.item}</p>
+            {listState.map((todo, index) => {
+                return <Todo key={index} props={ todo} dispatch={dispatch} />
             })}
-            <AddTodo />
+            <AddTodo dispatch={dispatch} />
         </>
     )
 }

@@ -3,7 +3,8 @@ import React, { useReducer } from 'react';
 import TodoList from './components/TodoList';
 
 import { ListContext } from './contexts/ListContext';
-import { initialState, listReducer } from './reducers/listReducer';
+import { listReducer } from './reducers/listReducer';
+import { initialState } from './data';
 
 import './App.css';
 
