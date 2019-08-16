@@ -6,7 +6,12 @@ export const listReducer = (state, action) => {
             return [
                 ...state,
                 { id: uuid.v1(), item: action.payload.item, completed: false }
-            ]
+            ];
+        case "TOGGLE_COMPLETED":
+            state.forEach(todo => {
+                todo.id === action.payload && (todo.completed = !todo.completed);
+            })
+            return [...state];
         default:
             return state;
     }
