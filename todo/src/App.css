@@ -5,3 +5,8 @@
 .completed {
   text-decoration: line-through;
 }
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+}
